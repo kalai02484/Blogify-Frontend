@@ -1,7 +1,8 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import api from "../services/api";
+
 
 const Register = () => {
   const navigate = useNavigate();
@@ -92,7 +93,7 @@ const Register = () => {
 
         <button
           className="w-full bg-amber-400 text-white p-3 rounded-xl mb-3 cursor-pointer"
-          type="button"
+          type="submit"
           onClick={handleSubmit}
         >
           Register

@@ -82,10 +82,10 @@ const Login = () => {
 
         <button
           className="w-full bg-amber-400 text-white p-3 rounded-xl mb-3 cursor-pointer"
-          type="button"
+          type="submit"
           onClick={handleSubmit}
         >
-          Register
+          Login
         </button>
         <div className=" text-gray-500 ">
           New User? Please{" "}
