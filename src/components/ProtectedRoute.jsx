@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import Error from "../pages/Error";
 
-const ProtectedRoute = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const ProtectedRoute = ({ children, adminOnly=false }) => {
 
-export default ProtectedRoute
+  const token = localStorage.getItem("token");
+  const role = localStorage.getItem("role");
+
+  if (!token) {
+    return <Navigate to="/login" />;
+  }
+    
+  if (adminOnly && role !== "admin"){
+    return <Error />
+  } 
+
+  return children;
+};
+
+export default ProtectedRoute;
