@@ -4,7 +4,6 @@ import { GrBlog } from "react-icons/gr";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-
   const navigate = useNavigate();
   const isauthenticated = localStorage.getItem("token");
   const isAdmin = localStorage.getItem("role") === "admin";
@@ -19,9 +18,9 @@ const Navbar = () => {
     <nav className="navbar bg-amber-300 border-b border-gray-200  z-50 ">
       <div className="mx-auto w-full max-w-8xl px-4 py-2 sm:px-6 lg:flex lg:items-center lg:gap-2 lg:px-8 ">
         <div className="navbar-start items-center justify-between max-lg:w-full">
-          <Link 
+          <Link
             className="text-orange-600 flex items-center gap-3 text-xl font-bold"
-            to={"/"}
+            to={"/  "}
           >
             <GrBlog className="3xl" />
             Bloggify
@@ -45,7 +44,10 @@ const Navbar = () => {
           className="lg:navbar-end transition-height collapse hidden grow overflow-hidden duration-300 lg:flex"
         >
           <div className="text-base-content flex gap-6 text-base font-medium max-lg:mt-4 max-lg:flex-col lg:items-center lg:gap-10">
-            <Link to="/" className="text-orange-600 hover:transform hover:-translate-y-0.5 transition-all duration-300">
+            <Link
+              to="/"
+              className="text-orange-600 hover:transform hover:-translate-y-0.5 transition-all duration-300"
+            >
               Home
             </Link>
             {isAdmin && (
@@ -70,9 +72,9 @@ const Navbar = () => {
                   onClick={handleLogout}
                 >
                   Logout
-                </button>                
+                </button>
               </>
-            ):(
+            ) : (
               <>
                 <Link
                   to="/login"
@@ -88,8 +90,6 @@ const Navbar = () => {
                 </Link>
               </>
             )}
-
-            
           </div>
         </div>
       </div>
